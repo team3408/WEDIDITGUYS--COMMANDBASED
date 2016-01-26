@@ -22,12 +22,16 @@ DefaultDrive::DefaultDrive() {
 
 // Called just before this Command runs the first time
 void DefaultDrive::Initialize() {
-	
+
 }
 
 // Called repeatedly when this Command is scheduled to run
 void DefaultDrive::Execute() {
-	
+	float leftDrive = OI::driveStick->GetRawAxis(1);
+	float rightDrive = OI::driveStick->GetRawAxis(3);
+	leftDrive = leftDrive/2;
+	rightDrive = rightDrive/2;
+	Robot::drive->TwoAxis(leftDrive, rightDrive);
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -43,5 +47,5 @@ void DefaultDrive::End() {
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void DefaultDrive::Interrupted() {
-
+	Robot::drive->TwoAxis(0, 0);
 }
