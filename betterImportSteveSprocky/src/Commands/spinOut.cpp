@@ -22,7 +22,7 @@ spinOut::spinOut() {
 
 // Called just before this Command runs the first time
 void spinOut::Initialize() {
-	
+	Robot::loaderSpin->Out();
 }
 
 // Called repeatedly when this Command is scheduled to run
@@ -37,11 +37,13 @@ bool spinOut::IsFinished() {
 
 // Called once after isFinished returns true
 void spinOut::End() {
+	Robot::loaderSpin->Stop();
 	
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void spinOut::Interrupted() {
+	Robot::loaderSpin->Stop();
 
 }
