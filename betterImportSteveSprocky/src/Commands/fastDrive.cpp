@@ -29,8 +29,6 @@ void fastDrive::Initialize() {
 void fastDrive::Execute() {
 	float leftDrive = OI::driveStick->GetRawAxis(1);
 	float rightDrive = OI::driveStick->GetRawAxis(3);
-	leftDrive = leftDrive/2;
-	rightDrive = rightDrive/2;
 	Robot::drive->TwoAxis(leftDrive, rightDrive);
 }
 
