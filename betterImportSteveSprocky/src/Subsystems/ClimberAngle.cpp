@@ -37,3 +37,11 @@ void ClimberAngle::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
+void ClimberAngle::Move(float moveAnglePower){
+	cANTalon2->Set(moveAnglePower);
+	cANTalon1->Set(-moveAnglePower);
+}
+
+int ClimberAngle::GetAngle(){
+	return analogPotentiometer1->GetAngle();
+}
