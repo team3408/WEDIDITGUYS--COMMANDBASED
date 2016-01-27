@@ -10,7 +10,7 @@
 
 
 
-
+#include "WPILib.h"
 #include "loaderAngle.h"
 #include "../RobotMap.h"
 #include "WPILib.h"
