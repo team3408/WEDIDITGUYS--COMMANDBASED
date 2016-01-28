@@ -31,6 +31,19 @@ void LoaderAngle::InitDefaultCommand() {
 	SetDefaultCommand(new defaultAngleLoader());
 }
 
+void LoaderAngle::Move(float value) {
+	angle->Set(value);
+}
+
+float LoaderAngle::GetAngle() {
+	float output = analogPotentiometer1->GetVoltage();
+	return analogPotentiometer1;
+}
+
+void LoaderAngle::Stop() {
+	angle->Set(0);
+}
+
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
