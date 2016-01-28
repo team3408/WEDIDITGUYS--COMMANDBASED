@@ -14,7 +14,7 @@ Subsystems:
 5. Loader Spin
 6. Shooter
  
-Commmands
+Commmands:
 1. Autonomous Commands
 2. Default Angle Climb
 3. Default Angle Loader
