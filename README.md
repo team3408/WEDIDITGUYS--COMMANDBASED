@@ -10,9 +10,9 @@ Subsystems:
 1. Climber Angle
 2. Climber Pneumatics
 3. Drive
-4. Loader Angle
-5. Loader Spin
-6. Shooter
+4. Loader Angle -
+5. Loader Spin -error/when finished
+6. Shooter -canceled
  
 Commmands:
 1. Autonomous Commands
