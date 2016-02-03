@@ -45,3 +45,13 @@ void Drive::TwoAxis(float left, float right) {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
+Command* autonomousCommand;
+
+class Robot: public IterativeRobot {
+
+	void RobotInit()
+	{
+		autonomousCommand = new DefaultDrive();
+
+	}
+};
