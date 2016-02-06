@@ -27,7 +27,9 @@ void fastDrive::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void fastDrive::Execute() {
-	
+	float leftDrive = OI::driveStick->GetRawAxis(1);
+	float rightDrive = OI::driveStick->GetRawAxis(3);
+	Robot::drive->TwoAxis(leftDrive, rightDrive);
 }
 
 // Make this return true when this Command no longer needs to run execute()

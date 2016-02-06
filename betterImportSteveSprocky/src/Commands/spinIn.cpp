@@ -22,6 +22,7 @@ spinIn::spinIn() {
 
 // Called just before this Command runs the first time
 void spinIn::Initialize() {
+	Robot::loaderSpin->In();
 	
 }
 
@@ -37,11 +38,13 @@ bool spinIn::IsFinished() {
 
 // Called once after isFinished returns true
 void spinIn::End() {
+	Robot::loaderSpin->Stop();
 	
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void spinIn::Interrupted() {
+	Robot::loaderSpin->Stop();
 
 }

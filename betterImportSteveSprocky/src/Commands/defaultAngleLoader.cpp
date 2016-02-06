@@ -22,12 +22,14 @@ defaultAngleLoader::defaultAngleLoader() {
 
 // Called just before this Command runs the first time
 void defaultAngleLoader::Initialize() {
+	float joystickValue = OI::buttonStick->GetRawAxis();
+	Robot::loaderAngle->Move(joystickValue);
 	
 }
 
 // Called repeatedly when this Command is scheduled to run
 void defaultAngleLoader::Execute() {
-	
+	Robot::loaderAngle->GetAngle();
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -37,11 +39,11 @@ bool defaultAngleLoader::IsFinished() {
 
 // Called once after isFinished returns true
 void defaultAngleLoader::End() {
-	
+	Robot::loaderAngle->Stop();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void defaultAngleLoader::Interrupted() {
-
+	End();
 }
