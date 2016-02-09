@@ -37,6 +37,7 @@ public:
 	Drive();
 	void InitDefaultCommand();
 	void TwoAxis(float left, float right);
+	int Encoders();
 };
 
 #endif

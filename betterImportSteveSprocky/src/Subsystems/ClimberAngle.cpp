@@ -44,5 +44,5 @@ void ClimberAngle::Move(float moveAnglePower){
 
 int ClimberAngle::GetAngle(){
 	//returns the angle of the potentiometer.
-	return analogPotentiometer1->GetAngle();
+	return analogPotentiometer1->Get();
 }
