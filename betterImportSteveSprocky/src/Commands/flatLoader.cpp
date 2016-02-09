@@ -10,6 +10,8 @@
 
 
 #include "flatLoader.h"
+#include "../RobotMap.h"
+#include "WPILib.h"
 
 flatLoader::flatLoader() {
 	// Use requires() here to declare subsystem dependencies
@@ -32,6 +34,7 @@ void flatLoader::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool flatLoader::IsFinished() {
+
 	return false;
 }
 
