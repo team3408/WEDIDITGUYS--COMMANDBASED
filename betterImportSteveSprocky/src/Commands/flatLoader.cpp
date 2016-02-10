@@ -13,9 +13,6 @@
 #include "../RobotMap.h"
 #include "WPILib.h"
 
-const int gain = 0.008;//These are constant so that they compile better
-const int targetAngle = 5;
-
 flatLoader::flatLoader() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -31,6 +28,8 @@ void flatLoader::Initialize() {
 }
 
 // Called repeatedly when this Command is scheduled to run
+const int gain = 0.008;//These are constant so that they compile better
+const int targetAngle = 5;
 void flatLoader::Execute() {
 
 	int currentAngle = Robot::loaderAngle->GetAngle();//angle is returned in degrees
