@@ -48,8 +48,11 @@ void flatLoader::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool flatLoader::IsFinished() {
-
-	return false;
+	if GetAngle() <= 5 {
+		return true;
+	} else if GetAngle() >= 5 {
+		return false;
+	}
 }
 
 // Called once after isFinished returns true
