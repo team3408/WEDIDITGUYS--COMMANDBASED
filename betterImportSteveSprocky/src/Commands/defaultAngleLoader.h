@@ -21,9 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class defaultAngleLoader: public Command {
+class DefaultAngleLoader: public Command {
 public:
-	defaultAngleLoader();
+	DefaultAngleLoader();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
