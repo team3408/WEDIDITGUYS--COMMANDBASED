@@ -37,6 +37,7 @@ void LoaderAngle::Move(float value) {
 	angle2->Set(-value);//
 }
 
+
 float LoaderAngle::GetAngle() {
 	float output = analogPotentiometer1->Get();
 	return output;
