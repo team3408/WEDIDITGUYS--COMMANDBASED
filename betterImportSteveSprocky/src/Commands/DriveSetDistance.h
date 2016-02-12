@@ -1,13 +1,14 @@
 #ifndef DriveSetDistance_H
 #define DriveSetDistance_H
 
-#include "../CommandBase.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 #include "WPILib.h"
 
-class DriveSetDistance: public CommandBase
+class DriveSetDistance: public Command
 {
 public:
-	DriveSetDistance();
+	DriveSetDistance(double Distance);
 	void Initialize();
 	void Execute();
 	bool IsFinished();

@@ -3,7 +3,7 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
-DriveSetDistance::DriveSetDistance()
+DriveSetDistance::DriveSetDistance(double Distance)
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
