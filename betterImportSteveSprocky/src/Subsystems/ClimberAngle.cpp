@@ -33,7 +33,7 @@ ClimberAngle::ClimberAngle() : Subsystem("ClimberAngle") {
 void ClimberAngle::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	//SetDefaultCommand(new MySpecialCommand());
-	SetDefaultCommand(new defaultAngleClimb());
+	SetDefaultCommand(new DefaultAngleClimb());
 }
 
 

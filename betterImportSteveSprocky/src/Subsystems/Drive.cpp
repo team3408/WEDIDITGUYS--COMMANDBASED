@@ -46,9 +46,9 @@ void Drive::TwoAxis(float left, float right) {
 }
 
 int Drive::Encoders(){
-	int encoder1 = quadratureEncoder1->Get();
-	int encoder2 = quadratureEncoder2->Get();
-	return quadratureEncoder1;
+	double encoder1 = quadratureEncoder1->Get();
+	double encoder2 = quadratureEncoder2->Get();
+	return encoder1;
 }
 
 // Put methods for controlling this subsystem

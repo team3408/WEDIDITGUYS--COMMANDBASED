@@ -21,9 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class defaultAngleClimb: public Command {
+class DefaultAngleClimb: public Command {
 public:
-	defaultAngleClimb();
+	DefaultAngleClimb();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

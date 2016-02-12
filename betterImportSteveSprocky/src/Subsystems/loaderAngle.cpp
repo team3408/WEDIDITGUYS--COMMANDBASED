@@ -29,7 +29,7 @@ LoaderAngle::LoaderAngle() : Subsystem("loaderAngle") {
 void LoaderAngle::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	//SetDefaultCommand(new MySpecialCommand());
-	SetDefaultCommand(new defaultAngleLoader());
+	SetDefaultCommand(new DefaultAngleLoader());
 }
 
 void LoaderAngle::Move(float value) {
