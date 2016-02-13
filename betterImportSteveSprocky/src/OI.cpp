@@ -67,7 +67,7 @@ OI::OI() {
 
 	SmartDashboard::PutData("slowDrive", new slowDrive());
 
-	SmartDashboard::PutData("defaultAngleLoader", new defaultAngleLoader());
+	SmartDashboard::PutData("defaultAngleLoader", new DefaultAngleLoader());
 
 	SmartDashboard::PutData("spinOut", new spinOut());
 
@@ -79,7 +79,7 @@ OI::OI() {
 
 	SmartDashboard::PutData("retract", new retract());
 
-	SmartDashboard::PutData("defaultAngleClimb", new defaultAngleClimb());
+	SmartDashboard::PutData("defaultAngleClimb", new DefaultAngleClimb());
 
 	SmartDashboard::PutData("lowerEverything", new lowerEverything());
 

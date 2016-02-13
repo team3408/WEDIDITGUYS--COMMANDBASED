@@ -23,6 +23,7 @@
  */
 class flatLoader: public Command {
 public:
+	virtual float currentAngle;
 	flatLoader();
 	virtual void Initialize();
 	virtual void Execute();
