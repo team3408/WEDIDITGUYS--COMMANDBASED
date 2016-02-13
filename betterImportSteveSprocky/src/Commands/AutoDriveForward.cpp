@@ -1,5 +1,6 @@
 #include "AutoDriveForward.h"
 #include "DriveSetDistance.h"
+#include "Commands/Subsystem.h"
 
 AutoDriveForward::AutoDriveForward()
 {
