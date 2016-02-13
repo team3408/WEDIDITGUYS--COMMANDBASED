@@ -1,7 +1,9 @@
 #include "AutoDriveForward.h"
+#include "DriveSetDistance.h"
 
 AutoDriveForward::AutoDriveForward()
 {
+
 	AddSequential(new DriveSetDistance(165.6));
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
