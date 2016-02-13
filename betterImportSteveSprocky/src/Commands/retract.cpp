@@ -27,7 +27,7 @@ void retract::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void retract::Execute() {
-	
+	Robot::climberPneumatics->Retracting();
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -37,11 +37,11 @@ bool retract::IsFinished() {
 
 // Called once after isFinished returns true
 void retract::End() {
-	
+	Robot::climberPneumatics->Off();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void retract::Interrupted() {
-
+	End();
 }
