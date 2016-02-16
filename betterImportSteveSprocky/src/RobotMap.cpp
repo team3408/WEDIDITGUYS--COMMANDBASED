@@ -69,7 +69,6 @@ void RobotMap::init() {
 	driveAnalogInput1 = new AnalogInput(0);
 	lw->AddSensor("Drive", "Analog Input 1", driveAnalogInput1);
 	
-	// this is how they are used DoubleSolenoid(uint8_t moduleNumber, uint32_t forwardChannel, uint32_t reverseChannel);
 	climberPneumaticsDoubleSolenoid2 = new DoubleSolenoid(0, 2, 3);      
 	lw->AddActuator("ClimberPneumatics", "Double Solenoid 2", climberPneumaticsDoubleSolenoid2);
 	
