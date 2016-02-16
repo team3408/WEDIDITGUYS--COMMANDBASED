@@ -50,6 +50,7 @@ OI::OI() {
 	retractPiston->WhileHeld(new retract());
 	climbUp = new JoystickButton(buttonStick, 3);
 	climbUp->WhileHeld(new fullClimb());
+
 	driveStick = new Joystick(0);
 	
 	slowMode = new JoystickButton(driveStick, 5);

@@ -36,6 +36,8 @@ public:
 	void Move(float value);
 	float GetAngle();
 	void Stop();
+	float ARMLENGTH;
+	float ARMEDGESPACE;
 };
 
 #endif

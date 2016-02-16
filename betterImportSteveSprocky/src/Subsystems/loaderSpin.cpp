@@ -33,7 +33,7 @@ void LoaderSpin::InitDefaultCommand() {
 }
 
 void LoaderSpin::In() {
-	spin->Set(0.5);
+	spin->Set(-0.5);
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
@@ -41,7 +41,7 @@ void LoaderSpin::In() {
 
 
 void LoaderSpin::Out() {
-	spin->Set(-0.5);
+	spin->Set(0.5);
 
 }
 
