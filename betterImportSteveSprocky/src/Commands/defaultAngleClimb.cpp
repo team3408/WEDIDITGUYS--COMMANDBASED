@@ -38,11 +38,11 @@ bool DefaultAngleClimb::IsFinished() {
 
 // Called once after isFinished returns true
 void DefaultAngleClimb::End() {
-	
+	Robot::climberAngle->Move(0.0);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void DefaultAngleClimb::Interrupted() {
-
+	Robot::climberAngle->Move(0.0);
 }

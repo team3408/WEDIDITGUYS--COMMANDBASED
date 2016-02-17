@@ -41,7 +41,7 @@ bool DefaultDrive::IsFinished() {
 
 // Called once after isFinished returns true
 void DefaultDrive::End() {
-	
+	Interrupted();
 }
 
 // Called when another command which requires one or more of the same
