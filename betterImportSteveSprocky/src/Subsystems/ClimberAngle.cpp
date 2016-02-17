@@ -45,10 +45,10 @@ void ClimberAngle::Move(float moveAnglePower){
 	cANTalon1->Set(-moveAnglePower);
 }
 
-int ClimberAngle::GetAngle(){
-	double stringLength = analogPotentiometer1->Get();// gets the length in inches
+float ClimberAngle::GetAngle(){
+	float stringLength = analogPotentiometer1->Get();// gets the length in inches
 	//Finds angle of Potentiometer using Pythag Thm and Trig
-	double angle = acos((( this->arm * arm + constant * constant - stringLength * stringLength)/(2 * arm * constant)) * (180.0 / PI));
+	float angle = acos((( this->arm * arm + constant * constant - stringLength * stringLength)/(2 * arm * constant)) * (180.0 / PI));
 	//returns the angle of the potentiometer.
 	return angle;
 }

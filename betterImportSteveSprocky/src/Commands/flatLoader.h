@@ -24,6 +24,7 @@
 class flatLoader: public Command {
 public:
 	flatLoader();
+
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
