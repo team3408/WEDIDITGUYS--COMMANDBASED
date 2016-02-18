@@ -25,6 +25,8 @@ void DriveSetDistance::Initialize()
    int currentEncCountLeft;
    int currentEncCountRight;
 
+   int overshootNumber = 100;
+
 
    float targetDistance;
    const float encoderCountsPerRotation = 360;
@@ -59,7 +61,7 @@ void DriveSetDistance::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool DriveSetDistance::IsFinished()
 {
-	return (currentEncCountLeft > targetEncoderCounts - 5 && currentEncCountLeft < targetEncoderCounts + 5);
+	return (currentEncCountLeft > targetEncoderCounts - overshootNumber && currentEncCountLeft < targetEncoderCounts + overshootNumber);
 }
 
 // Called once after isFinished returns true
