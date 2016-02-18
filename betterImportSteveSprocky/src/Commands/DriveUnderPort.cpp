@@ -2,6 +2,15 @@
 
 DriveUnderPort::DriveUnderPort()
 {
+
+
+	AddSequential(new DriveSetDistance(100));
+	AddSequential(new lowerEverything());
+	AddSequential(new DriveSetDistance(25));
+	AddSequential(new LiftLoader());
+	AddSequential(new DriveSetDistance(100));
+
+
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
