@@ -71,6 +71,7 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
+
 	// This makes sure that the autonomous stops running when
 	// teleop starts running. If you want the autonomous to 
 	// continue until interrupted by another command, remove
@@ -80,6 +81,7 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
+	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance(SmartDashboard::GetNumber("DistanceToDrive")));
 	Scheduler::GetInstance()->Run();
 }
 
