@@ -89,7 +89,6 @@ OI::OI() {
 
 	SmartDashboard::PutData("hitBar", new hitBar());
 
-	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance());
 
 
 

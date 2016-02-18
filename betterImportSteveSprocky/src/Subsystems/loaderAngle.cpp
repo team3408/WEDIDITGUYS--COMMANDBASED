@@ -43,7 +43,7 @@ void LoaderAngle::Move(float value) {
 }
 
 
-float ClimberAngle::GetAngle(){
+float LoaderAngle::GetAngle(){
 	float stringLength = analogPotentiometer1->Get();// gets the length in inche
 	//Finds angle of Potentiometer using Pythag Thm and Trig
 	float angle = acos(( this->ARMLENGTH * ARMLENGTH + ARMTOEDGE * ARMTOEDGE - stringLength * stringLength)/(2.0 * ARMLENGTH * ARMTOEDGE)) * (180.0 / PI);
