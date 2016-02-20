@@ -1,7 +1,9 @@
 #ifndef LiftLoader_H
 #define LiftLoader_H
 
-#include "../CommandBase.h"
+
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 #include "WPILib.h"
 
 class LiftLoader: public Command

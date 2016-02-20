@@ -11,6 +11,8 @@
 
 
 #include "lowerEverything.h"
+#include "flatLoader.h"
+#include "flatClimb.h"
 
 lowerEverything::lowerEverything() {
 	AddSequential(new flatLoader());
