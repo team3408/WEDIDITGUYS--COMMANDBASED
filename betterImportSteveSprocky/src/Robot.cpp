@@ -8,6 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
+
 #include "Robot.h"
 
 
@@ -72,7 +73,7 @@ void Robot::AutonomousPeriodic() {
 
 void Robot::TeleopInit() {
 	// This makes sure that the autonomous stops running when
-	// teleop starts running. If you want the autonomous to 
+	// teleop starts running. If you want the autonomous to
 	// continue until interrupted by another command, remove
 	// these lines or comment it out.
 	if (autonomousCommand != NULL)
@@ -88,4 +89,3 @@ void Robot::TestPeriodic() {
 }
 
 START_ROBOT_CLASS(Robot);
-
