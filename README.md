@@ -18,7 +18,7 @@ Subsystems:
 4. Loader Angle - Moves?$$$; Sensors?$$$; Constanst/config Sensors?!!!
 5. Loader Spin - Moves?$$$
 6. Shooter -canceled
- 
+
  Works does not mean tested.
 Commmands:
 1. Autonomous Commands- We might need a lot more
@@ -38,4 +38,4 @@ Commmands:
 15. Spin Out - Works?$$$
 
 OTHER:
-Camera Code
+1. Camera Code

@@ -24,6 +24,7 @@ private:
 	JoystickButton* extendPiston;
 	JoystickButton* retractPiston;
 	JoystickButton* climbUp;
+	JoystickButton* setupPistonButton;
 	Joystick* driveStick;
 	JoystickButton* slowMode;
 	JoystickButton* fastMode;
