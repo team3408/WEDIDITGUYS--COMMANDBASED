@@ -41,11 +41,11 @@ bool slowDrive::IsFinished() {
 
 // Called once after isFinished returns true
 void slowDrive::End() {
-	
+	Robot::drive->TwoAxis(0.0,0.0);
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void slowDrive::Interrupted() {
-
+	End();
 }
