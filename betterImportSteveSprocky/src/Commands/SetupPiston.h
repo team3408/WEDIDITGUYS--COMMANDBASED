@@ -1,18 +1,22 @@
 #ifndef SetupPiston_H
 #define SetupPiston_H
 
-#include "../CommandBase.h"
-#include "WPILib.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
-class SetupPiston: public CommandBase
-{
+/**
+ *
+ *
+ * @author ExampleAuthor
+ */
+class SetupPiston: public Command {
 public:
 	SetupPiston();
-	void Initialize();
-	void Execute();
-	bool IsFinished();
-	void End();
-	void Interrupted();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif
