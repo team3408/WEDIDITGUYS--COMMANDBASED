@@ -44,6 +44,7 @@ OI::OI() {
 
 	allFlat = new JoystickButton(buttonStick, 1);
 	allFlat->WhileHeld(new lowerEverything());
+
 	spinnerIn = new JoystickButton(buttonStick, 2);
 	spinnerIn->WhileHeld(new spinIn());
 	spinnerOut = new JoystickButton(buttonStick, 4);
