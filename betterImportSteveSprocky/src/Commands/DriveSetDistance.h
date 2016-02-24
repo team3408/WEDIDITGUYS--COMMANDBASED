@@ -14,6 +14,7 @@ public:
 	bool IsFinished();
 	void End();
 	void Interrupted();
+	float power;
 };
 
 #endif

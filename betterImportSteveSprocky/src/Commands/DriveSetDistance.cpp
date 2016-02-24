@@ -15,7 +15,6 @@ DriveSetDistance::DriveSetDistance(double Distance)
 void DriveSetDistance::Initialize()
 {
 
-
 }
 
 	float midPower = 0.66;
@@ -38,7 +37,7 @@ void DriveSetDistance::Initialize()
    float targetEncoderCounts = encoderCountsPerRotation * rotations + initialEncCountLeft;
    float left;
    float right;
-	 double gain = 0.01;
+   float gain = 0.01;
 
 // Called repeatedly when this Command is scheduled to run
 void DriveSetDistance::Execute()
@@ -47,7 +46,6 @@ void DriveSetDistance::Execute()
     currentEncCountLeft = Robot::drive ->Encoders();
 
     EncErrorLeft = targetEncoderCounts - currentEncCountLeft;
-
 
 	power = midPower + (EncErrorLeft * gain);
 
