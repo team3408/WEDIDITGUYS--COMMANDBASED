@@ -39,7 +39,7 @@ void LiftLoader::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool LiftLoader::IsFinished()
 {
-	return (currentAngle <= 5);
+	return (currentAngle <= 85);
 }
 
 // Called once after isFinished returns true
