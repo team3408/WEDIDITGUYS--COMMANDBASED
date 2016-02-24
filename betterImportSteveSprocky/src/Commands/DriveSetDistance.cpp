@@ -14,31 +14,18 @@ DriveSetDistance::DriveSetDistance(double Distance)
 // Called just before this Command runs the first time
 void DriveSetDistance::Initialize()
 {
+	   int initialEncCountLeft = Robot::drive->Encoders();
 
+	   float rotations = targetDistance / circumference;
+	   targetEncoderCounts = encoderCountsPerRotation * rotations + initialEncCountLeft;
 
 }
 
-	float midPower = 0.66;
-   float leftPower;
-   float rightPower;
-   float currentDistance;
-   int currentEncCountLeft;
-   int currentEncCountRight;
-
-   int overshootNumber = 100;
 
 
-   float targetDistance;
-   const float encoderCountsPerRotation = 360;
-   const float diameter = 7.6;						// 7.6 inches is the diameter of our robot
-   const float circumference = diameter * 3.14159;
-   float rotations = targetDistance / circumference;
-   float EncErrorLeft;
-   int initialEncCountLeft = Robot::drive->Encoders();
-   float targetEncoderCounts = encoderCountsPerRotation * rotations + initialEncCountLeft;
-   float left;
-   float right;
-	 double gain = 0.01;
+
+
+
 
 // Called repeatedly when this Command is scheduled to run
 void DriveSetDistance::Execute()
