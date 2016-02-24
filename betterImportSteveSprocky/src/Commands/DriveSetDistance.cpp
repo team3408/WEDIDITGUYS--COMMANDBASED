@@ -38,8 +38,7 @@ void DriveSetDistance::Initialize()
    float targetEncoderCounts = encoderCountsPerRotation * rotations + initialEncCountLeft;
    float left;
    float right;
-
-
+	 double gain = 0.01;
 
 // Called repeatedly when this Command is scheduled to run
 void DriveSetDistance::Execute()
@@ -50,12 +49,23 @@ void DriveSetDistance::Execute()
     EncErrorLeft = targetEncoderCounts - currentEncCountLeft;
 
 
-    left = midPower;
-    right = midPower;
+	power = midPower + (EncErrorLeft * gain);
+
+	if (power > 1) {
+
+		power = 1;
+
+	} else if (power < -1){
+
+		power = -1;
+
+	}
+
+	left = power;
+	right = power;
 
 	Robot::drive -> TwoAxis(left, right);
-
-
+	
 }
 
 // Make this return true when this Command no longer needs to run execute()
