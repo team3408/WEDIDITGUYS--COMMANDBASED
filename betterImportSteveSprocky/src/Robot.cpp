@@ -90,8 +90,10 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-
-	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance(SmartDashboard::GetNumber("DistanceToDrive",0.0)));
+	float distance = SmartDashboard::GetNumber("DistanceToDrive",100.0);
+	SmartDashboard::PutNumber("Drive Encoder",drive->Encoders());
+	SmartDashboard::PutNumber("LoaderAngle",loaderAngle->GetAngle());
+	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance(distance));
 	Scheduler::GetInstance()->Run();
 }
 
