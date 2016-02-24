@@ -83,7 +83,7 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() {
 
-	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance(SmartDashboard::GetNumber("DistanceToDrive",0.0)));
+//	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance(SmartDashboard::GetNumber("DistanceToDrive",0.0)));
 	Scheduler::GetInstance()->Run();
 }
 
