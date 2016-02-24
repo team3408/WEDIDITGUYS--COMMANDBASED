@@ -78,7 +78,8 @@ void RobotMap::init() {
 	loaderAngleangle = new CANTalon(33);
 	loaderAngleangle2 = new CANTalon(10);
 	
-	loaderAngleAnalogPotentiometer1 = new AnalogPotentiometer(1, 1.0, 0.0);
+
+	loaderAngleAnalogPotentiometer1 = new AnalogPotentiometer(1, 360.0, 0.0);
 	lw->AddSensor("loaderAngle", "Analog Potentiometer 1", loaderAngleAnalogPotentiometer1);
 	
 	//shooterCANTalon1 = new CANTalon(10);
