@@ -34,7 +34,7 @@ const int targetAngle = 5;
 void flatLoader::Execute() {
 
 	this->currentAngle = Robot::loaderAngle->GetAngle();//angle is returned in degrees
-	int angleError = currentAngle - targetAngle;
+	int angleError = currentAngle - targetAngle;// produces positive values
 	float angleAdjustment = angleError * gain;
 	
 	double power = angleAdjustment;
