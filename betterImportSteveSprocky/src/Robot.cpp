@@ -87,7 +87,7 @@ void Robot::TeleopInit() {
 	// these lines or comment it out.
 	if (autonomousCommand != NULL)
 		autonomousCommand->Cancel();
-	float distance = SmartDashboard::GetNumber("DistanceToDrive",100.0);
+	float distance = SmartDashboard::GetNumber("DB/Slider 0", 0.0);
 
 	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance(distance));
 }

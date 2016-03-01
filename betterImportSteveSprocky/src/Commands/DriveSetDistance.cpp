@@ -19,6 +19,8 @@ void DriveSetDistance::Initialize()
 	   float rotations = targetDistance / circumference;
 	   targetEncoderCounts = encoderCountsPerRotation * rotations + initialEncCountLeft;
 
+	   overshootNumber = 10;
+
 }
 
 
@@ -36,7 +38,7 @@ void DriveSetDistance::Execute()
     EncErrorLeft = targetEncoderCounts - currentEncCountLeft;
 
 
-	power = midPower + (EncErrorLeft * gain);
+	power = (EncErrorLeft * gain);
 
 	if (power > 1) {
 
