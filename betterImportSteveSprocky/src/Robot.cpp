@@ -26,8 +26,10 @@ IMAQdxSession session;
 Image *frame;
 IMAQdxError imaqError;
 std::unique_ptr<AxisCamera> camera;
-USBCamera* usbCamera;
 Image *otherFrame;
+CameraServer* usbCamera;
+
+
 
 
 //Light Code
@@ -50,11 +52,16 @@ void Robot::RobotInit() {
 	frame = imaqCreateImage(IMAQ_IMAGE_RGB, 0);
 	// open the camera at the IP address assigned. This is the IP address that the camera
 	// can be accessed through the web interface.
-	camera.reset(new AxisCamera("axis-camera.local"));
+	//camera.reset(new AxisCamera("axis-camera.local"));
+	//usbCamera = new USBCamera("usbCamera", true);
 
-	usbCamera -> OpenCamera();
-	usbCamera -> StartCapture();
-	usbCamera -> GetImage(otherFrame);
+	usbCamera = CameraServer::GetInstance();
+	usbCamera -> SetQuality(50);
+	usbCamera -> StartAutomaticCapture("cam0");
+
+	//usbCamera -> OpenCamera();
+	//usbCamera -> StartCapture();
+	//usbCamera -> GetImage(otherFrame);
 	//End Camera Code
 
 	//Start Light Code
