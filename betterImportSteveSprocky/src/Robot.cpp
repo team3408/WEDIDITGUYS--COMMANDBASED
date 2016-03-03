@@ -22,11 +22,11 @@ ClimberAngle* Robot::climberAngle = 0;
 OI* Robot::oi = 0;
 
 //Camera Code
-IMAQdxSession session;
-Image *frame;
-IMAQdxError imaqError;
-std::unique_ptr<AxisCamera> camera;
-Image *otherFrame;
+//IMAQdxSession session;
+//Image *frame;
+//IMAQdxError imaqError;
+//std::unique_ptr<AxisCamera> camera;
+//Image *otherFrame;
 CameraServer* usbCamera;
 
 
@@ -49,7 +49,7 @@ void Robot::RobotInit() {
 	climberAngle = new ClimberAngle();
 
 	//Start Camera Code
-	frame = imaqCreateImage(IMAQ_IMAGE_RGB, 0);
+	//frame = imaqCreateImage(IMAQ_IMAGE_RGB, 0);
 	// open the camera at the IP address assigned. This is the IP address that the camera
 	// can be accessed through the web interface.
 	//camera.reset(new AxisCamera("axis-camera.local"));
@@ -57,7 +57,7 @@ void Robot::RobotInit() {
 
 	usbCamera = CameraServer::GetInstance();
 	usbCamera -> SetQuality(50);
-	usbCamera -> StartAutomaticCapture("cam0");
+	usbCamera -> StartAutomaticCapture("cam1");
 
 	//usbCamera -> OpenCamera();
 	//usbCamera -> StartCapture();
@@ -132,9 +132,9 @@ void Robot::TeleopPeriodic() {
 	Scheduler::GetInstance()->Run();
 
 	//Start Camera Code
-	camera->GetImage(frame);
-	imaqDrawShapeOnImage(frame, frame, { 10, 10, 100, 100 }, DrawMode::IMAQ_DRAW_VALUE, ShapeMode::IMAQ_SHAPE_OVAL, 0.0f);
-	CameraServer::GetInstance()->SetImage(frame);
+	//camera->GetImage(frame);
+	//imaqDrawShapeOnImage(frame, frame, { 10, 10, 100, 100 }, DrawMode::IMAQ_DRAW_VALUE, ShapeMode::IMAQ_SHAPE_OVAL, 0.0f);
+	//CameraServer::GetInstance()->SetImage(frame);
 	//End Camera Code
 }
 
