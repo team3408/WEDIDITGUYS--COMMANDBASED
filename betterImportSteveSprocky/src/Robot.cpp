@@ -87,9 +87,14 @@ void Robot::TeleopInit() {
 	// these lines or comment it out.
 	if (autonomousCommand != NULL)
 		autonomousCommand->Cancel();
-	float distance = SmartDashboard::GetNumber("DB/Slider 0", 0.0);
+	float distance1 = 20;
+	float distance2 = 50;
+	float distance3 = 2;
 
-	SmartDashboard::PutData("DriveSetDistance", new DriveSetDistance(distance));
+	SmartDashboard::PutData("DriveSetDistance 20", new DriveSetDistance(distance1));
+	SmartDashboard::PutData("DriveSetDistance50", new DriveSetDistance(distance2));
+	SmartDashboard::PutData("DriveSetDistance2", new DriveSetDistance(distance3));
+
 }
 
 void Robot::TeleopPeriodic() {

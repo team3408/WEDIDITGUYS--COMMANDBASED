@@ -25,7 +25,6 @@ public:
 
 	   int overshootNumber = 100;
 
-
 	   float targetDistance;
 	   const float encoderCountsPerRotation = 360;
 	   const float diameter = 7.6;						// 7.6 inches is the diameter of our robot

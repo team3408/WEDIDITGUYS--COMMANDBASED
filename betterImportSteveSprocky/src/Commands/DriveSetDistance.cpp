@@ -9,36 +9,34 @@ DriveSetDistance::DriveSetDistance(double Distance)
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
 	Requires(Robot::drive);
+
+			targetDistance = Distance;
+
+
+		   overshootNumber = 10;
 }
 
 // Called just before this Command runs the first time
 void DriveSetDistance::Initialize()
 {
-	   int initialEncCountLeft = Robot::drive->Encoders();
-
 	   float rotations = targetDistance / circumference;
-	   targetEncoderCounts = encoderCountsPerRotation * rotations + initialEncCountLeft;
-
-	   overshootNumber = 10;
-
+	   SmartDashboard::PutNumber("InitialEncoderCounts",Robot::drive->Encoders());
+	   targetEncoderCounts = encoderCountsPerRotation * rotations +  Robot::drive->Encoders();
 }
-
-
-
-
 
 
 
 // Called repeatedly when this Command is scheduled to run
 void DriveSetDistance::Execute()
 {
-
+	if(!IsFinished()){
     currentEncCountLeft = Robot::drive ->Encoders();
 
     EncErrorLeft = targetEncoderCounts - currentEncCountLeft;
+	SmartDashboard::PutNumber("target encoder counts:" ,targetEncoderCounts);
 
 
-	power = (EncErrorLeft * gain);
+	power = - (EncErrorLeft * gain); // motors were going in the wrong direction
 
 	if (power > 1) {
 
@@ -54,6 +52,7 @@ void DriveSetDistance::Execute()
 	right = power;
 
 	Robot::drive -> TwoAxis(left, right);
+    }
 	
 }
 
@@ -66,12 +65,12 @@ bool DriveSetDistance::IsFinished()
 // Called once after isFinished returns true
 void DriveSetDistance::End()
 {
-
+	Execute();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void DriveSetDistance::Interrupted()
 {
-
+	Execute();
 }
