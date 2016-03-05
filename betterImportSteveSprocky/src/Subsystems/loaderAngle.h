@@ -39,6 +39,7 @@ public:
 	void Move(float value);
 	float GetAngle();
 	void Stop();
+	void DisplayValue();
 };
 
 #endif

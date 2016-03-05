@@ -28,7 +28,7 @@ void DefaultAngleClimb::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DefaultAngleClimb::Execute() {
 	float robotAngle = Robot::oi->getbuttonStick()->GetRawAxis(3);
-	Robot::climberAngle->Move(robotAngle);
+	Robot::climberAngle->Move(robotAngle*.8);
 }
 
 // Make this return true when this Command no longer needs to run execute()

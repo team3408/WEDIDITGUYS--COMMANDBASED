@@ -102,6 +102,8 @@ void Robot::TeleopPeriodic() {
 	SmartDashboard::PutNumber("LoaderAngle",loaderAngle->GetAngle());
 
 	Scheduler::GetInstance()->Run();
+	loaderAngle->DisplayValue();
+
 }
 
 void Robot::TestPeriodic() {
