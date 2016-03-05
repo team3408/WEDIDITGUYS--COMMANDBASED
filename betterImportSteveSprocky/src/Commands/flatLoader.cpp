@@ -25,7 +25,7 @@ flatLoader::flatLoader() {
 
 // Called just before this Command runs the first time
 void flatLoader::Initialize() {
-	
+
 }
 
 // Called repeatedly when this Command is scheduled to run
@@ -36,15 +36,19 @@ void flatLoader::Execute() {
 	this->currentAngle = Robot::loaderAngle->GetAngle();//angle is returned in degrees
 	int angleError = currentAngle - targetAngle;// produces positive values
 	float angleAdjustment = angleError * gain;
-	
+
 	double power = angleAdjustment;
-	
+
 	if (power > 1) {
 		power = 1;
-	} 
-	
+	}
+
 	Robot::loaderAngle->Move(power);
-	
+
+		SmartDashboard::PutData("flat loader angle:", Robot::loaderAngle->GetAngle());
+		SmartDashboard::PutData("angle adjustment / angleAdjustment:", power);
+
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
