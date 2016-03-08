@@ -28,7 +28,7 @@ void DefaultAngleLoader::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DefaultAngleLoader::Execute() {
 	float joystickValue = Robot::oi->getbuttonStick()->GetRawAxis(1);
-	Robot::loaderAngle->Move(joystickValue);
+	Robot::loaderAngle->Move(joystickValue*.6);
 }
 
 // Make this return true when this Command no longer needs to run execute()

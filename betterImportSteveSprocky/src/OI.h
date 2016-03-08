@@ -28,6 +28,7 @@ private:
 	Joystick* driveStick;
 	JoystickButton* slowMode;
 	JoystickButton* fastMode;
+	JoystickButton* fastLoader;
 
 
 

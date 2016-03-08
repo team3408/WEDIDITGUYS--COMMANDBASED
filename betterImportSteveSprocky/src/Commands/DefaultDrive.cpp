@@ -29,8 +29,8 @@ void DefaultDrive::Initialize() {
 void DefaultDrive::Execute() {
 	float leftDrive = Robot::oi->getdriveStick()->GetRawAxis(1);
 	float rightDrive = Robot::oi->getdriveStick()->GetRawAxis(3);
-	leftDrive = leftDrive/2;
-	rightDrive = rightDrive/2;
+	leftDrive = leftDrive*2/3;
+	rightDrive = rightDrive*2/3;
 	Robot::drive->TwoAxis(leftDrive, rightDrive);
 }
 
