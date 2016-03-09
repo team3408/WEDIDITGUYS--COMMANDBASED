@@ -32,8 +32,10 @@ public:
 	virtual void Interrupted();
 	float currentAngle;
 	float power;
-	const double gain = 0.08;
-	const int targetAngle = 5;
+	const double gain = 0.01;
+	const float targetAngle = 90;// zero is down
+	const float overshootNumber = 10;
+	float previousAngle;
 
 };
 
