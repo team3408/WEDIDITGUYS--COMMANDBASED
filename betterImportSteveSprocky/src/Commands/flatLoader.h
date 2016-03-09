@@ -31,6 +31,9 @@ public:
 	virtual void End();
 	virtual void Interrupted();
 	float currentAngle;
+	float power;
+	const double gain = 0.08;
+	const int targetAngle = 5;
 
 };
 

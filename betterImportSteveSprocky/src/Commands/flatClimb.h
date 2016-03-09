@@ -16,6 +16,12 @@ public:
 	virtual void Interrupted();
 
 	float currentAngle;
+	float targetAngle = 95;		// target angle is 95 degrees because down is 90
+	float angleAdjustment;
+	double power;
+	float gain = 0.008;
+	float angleError;
+
 };
 
 #endif
