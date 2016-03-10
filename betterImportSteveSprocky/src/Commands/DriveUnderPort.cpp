@@ -6,13 +6,13 @@
 
 DriveUnderPort::DriveUnderPort()
 {
-
-
-	AddSequential(new DriveSetDistance(100));
-	AddSequential(new lowerEverything());
-	AddSequential(new DriveSetDistance(25));
+	const int distToPort = 100;// in inches ALL OF THE CONSTs NEEDS TO BE CHANGED
+	const int distThroughObstacle = 50;// in inches
+	AddSequential(new AutoDriveWithMechsDown());
+	AddSequential(new DriveSetDistance(distToPort));
 	AddSequential(new LiftLoader());
-	AddSequential(new DriveSetDistance(100));
+	AddSequential(new DriveSetDistance(distThroughObstacle));
+
 
 
 	// Add Commands here:

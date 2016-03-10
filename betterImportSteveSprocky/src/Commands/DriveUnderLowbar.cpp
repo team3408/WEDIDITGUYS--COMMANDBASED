@@ -1,7 +1,16 @@
 #include "DriveUnderLowbar.h"
+#include "AutoDriveWithMechsDown.h"
+
 
 DriveUnderLowbar::DriveUnderLowbar()
 {
+	const int distThroughObstacle = 100;//inches this needs to be changed
+	AddSequential(AutoDriveWithMechsDown());
+	AddSequential(DriveSetDistance(distThroughObstacle));
+
+
+
+
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());

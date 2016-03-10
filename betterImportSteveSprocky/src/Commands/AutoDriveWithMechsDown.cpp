@@ -1,7 +1,12 @@
 #include "AutoDriveWithMechsDown.h"
+#include "DriveSetDistance.h"
+#include "lowerEverything.h"
 
 AutoDriveWithMechsDown::AutoDriveWithMechsDown()
 {
+	const int distToObstacle = 100;//in inchest needs to be changed
+	AddParallel(DriveSetDistance(distToObstacle));
+	AddParallel(lowerEverything());
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
