@@ -15,7 +15,7 @@
 #include "flatClimb.h"
 
 lowerEverything::lowerEverything() {
-	AddSequential(new flatLoader());
+	AddParallel(new flatLoader());
 	AddParallel(new flatClimb());
 
 	// Add Commands here:
