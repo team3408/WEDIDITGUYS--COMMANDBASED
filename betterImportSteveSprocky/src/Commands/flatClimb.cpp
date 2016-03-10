@@ -52,7 +52,7 @@ void flatClimb::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool flatClimb::IsFinished() {
-	return (Robot::climberAngle->GetAngle() <= targetAngle);
+	return ((currentAngle <= overshootNumber + targetAngle) && (currentAngle >= targetAngle - overshootNumber) );
 }
 
 // Called once after isFinished returns true

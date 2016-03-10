@@ -21,6 +21,7 @@ public:
 	double power;
 	float gain = 0.008;
 	float angleError;
+	float overshootNumber = 10;
 
 };
 

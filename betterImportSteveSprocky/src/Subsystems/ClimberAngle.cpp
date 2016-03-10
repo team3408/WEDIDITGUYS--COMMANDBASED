@@ -46,9 +46,14 @@ void ClimberAngle::Move(float moveAnglePower){
 }
 
 float ClimberAngle::GetAngle(){
-	float stringLength = analogPotentiometer1->Get();// gets the length in inche
+	float angle = analogPotentiometer1->Get();// gets the length in inche
 	//Finds angle of Potentiometer using Pythag Thm and Trig
-	float angle = acos(( this->ARMLENGTH * ARMLENGTH + ARMTOEDGE * ARMTOEDGE - stringLength * stringLength)/(2.0 * ARMLENGTH * ARMTOEDGE)) * (180.0 / PI);
-	//returns the angle of the potentiometer.
+//	float angle = acos(( this->ARMLENGTH * ARMLENGTH + ARMTOEDGE * ARMTOEDGE - stringLength * stringLength)/(2.0 * ARMLENGTH * ARMTOEDGE)) * (180.0 / PI);
+//	//returns the angle of the potentiometer.
 	return angle;
+}
+
+void CimberAngle::DisplayEverything(){
+
+	SmartDashboard::PutNumber("climber angle:", GetAngle());
 }

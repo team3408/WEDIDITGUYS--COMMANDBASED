@@ -38,6 +38,7 @@ public:
 	void InitDefaultCommand();
 	void Move(float moveAnglePower);
 	float GetAngle();
+	void DisplayEverything();
 };
 
 #endif

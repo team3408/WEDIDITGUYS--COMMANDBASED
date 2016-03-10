@@ -114,18 +114,18 @@ Joystick* OI::getdriveStick() {
 
 //This way we can change the values easier
 double OI::GetLeftDriveThumbStick(){
-        return drivestick->GetRawAxis(1);
+        return driveStick->GetRawAxis(1);
         //1 is y left
 }
 double OI::GetRightDriveThumbStick(){
-        return drivestick->GetRawAxis(3);
+        return driveStick->GetRawAxis(3);
 }
 double OI::GetLoaderThumbStick(){
-        //DOUBLE CHECK THE NUMBER
-        return buttonstick->GetRawAxis(1);
+        //NUMBER HAS BEEN DOUBLE CHECKED
+        return buttonStick->GetRawAxis(1);
 }
-double OI::GetLoaderThumbStick(){
-        return buttonstick->GetRawAxis(1);
+double OI::GetClimberThumbStick(){
+        return buttonStick->GetRawAxis(3);
 }
 
     // END AUTOGENERAGet CODE, SOURCE=ROBOTBUILDER ID=FUNCTIONS

@@ -40,6 +40,10 @@ public:
 
 	Joystick* getdriveStick();
 	Joystick* getbuttonStick();
+	double GetLeftDriveThumbStick();
+	double GetRightDriveThumbStick();
+	double GetLoaderThumbStick();
+	double GetClimberThumbStick();
 
 
 

@@ -38,6 +38,8 @@ public:
 	void InitDefaultCommand();
 	void TwoAxis(float left, float right);
 	int Encoders();
+
+	void DisplayEverything();
 };
 
 #endif

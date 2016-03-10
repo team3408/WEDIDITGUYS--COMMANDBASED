@@ -47,6 +47,8 @@ void flatLoader::Execute() {
 
 	if (power > 0.3) {
 		power = 0.3;
+	} else if (power < - 0.3 ){
+		power = -0.3;
 	}
 
 	Robot::loaderAngle->Move(power);

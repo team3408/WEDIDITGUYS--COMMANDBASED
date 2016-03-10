@@ -49,6 +49,13 @@ void Drive::TwoAxis(float left, float right) {
 
 }
 
+void Drive::DisplayEverything(){
+
+	SmartDashboard::PutNumber("encoder 1 (used for code)", quadratureEncoder1->Get());
+	SmartDashboard::PutNumber("encoder 2 (not used for code)", quadratureEncoder2->Get());
+
+}
+
 int Drive::Encoders(){
 	double encoder1 = quadratureEncoder1->Get();
 	double encoder2 = quadratureEncoder2->Get();
