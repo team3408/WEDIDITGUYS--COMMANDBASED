@@ -5,8 +5,8 @@
 AutoDriveWithMechsDown::AutoDriveWithMechsDown()
 {
 	const int distToObstacle = 100;//in inchest needs to be changed
-	AddParallel(DriveSetDistance(distToObstacle));
-	AddParallel(lowerEverything());
+	AddParallel( new DriveSetDistance(distToObstacle));
+	AddParallel(new lowerEverything());
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());

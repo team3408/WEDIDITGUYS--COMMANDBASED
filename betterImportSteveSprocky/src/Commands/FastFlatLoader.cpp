@@ -16,7 +16,7 @@ void FastFlatLoader::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void FastFlatLoader::Execute()
 {
-	Robot::loaderAngle->Move(Robot::oi->getbuttonStick()->GetRawAxis(1));
+	Robot::loaderAngle->Move(Robot::oi->getbuttonStick()->GetRawAxis(1) * .6);
 }
 
 // Make this return true when this Command no longer needs to run execute()

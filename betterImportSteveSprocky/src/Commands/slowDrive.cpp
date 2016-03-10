@@ -29,8 +29,8 @@ void slowDrive::Initialize() {
 void slowDrive::Execute() {
 	float leftDrive = Robot::oi->getdriveStick()->GetRawAxis(1);
 	float rightDrive = Robot::oi->getdriveStick()->GetRawAxis(3);
-	leftDrive = leftDrive/4;
-	rightDrive = rightDrive/4;
+	leftDrive = leftDrive/3;
+	rightDrive = rightDrive/3;
 	Robot::drive->TwoAxis(leftDrive, rightDrive);
 }
 

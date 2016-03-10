@@ -2,6 +2,7 @@
 #include "DriveSetDistance.h"
 #include "LiftLoader.h"
 #include "LowerEverything.h"
+#include "AutoDriveWithMechsDown.h"
 
 
 DriveUnderPort::DriveUnderPort()
