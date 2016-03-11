@@ -7,7 +7,7 @@
 
 DriveUnderLowbar::DriveUnderLowbar()
 {
-	const int distThroughObstacle = 60;//inches this needs to be changed
+	const int distThroughObstacle = 60 + 35;//inches 35 is length of robot?
 	AddSequential(new AutoDriveWithMechsDown());
 	AddSequential(new DriveSetDistance(distThroughObstacle));
 

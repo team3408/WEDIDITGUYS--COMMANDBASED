@@ -1,4 +1,7 @@
 #include "LiftLoader.h"
+#include "../RobotMap.h"
+#include 'WPILib.h'
+
 
 LiftLoader::LiftLoader()
 {
@@ -12,34 +15,44 @@ LiftLoader::LiftLoader()
 // Called just before this Command runs the first time
 void LiftLoader::Initialize()
 {
-
+	SmartDashboard::PutNumber("LOADER liftloader encoder angle :", Robot::loaderAngle->GetAngle());
+	SmartDashboard::PutNumber("LOADER liftloader motor initial power :", power);
+	currentAngle = Robot::loaderAngle->GetAngle();
+	previousAngle = Robot::loaderAngle->GetAngle();
+	gain;
+	targetAngle;
 }
-
-// Called repeatedly when this Command is scheduled to run
-const int gain = 0.008;//These are constant so that they compile better
-const int targetAngle = 90;
 
 void LiftLoader::Execute()
 {
-
+	this->previousAngle = currentAngle;
 	this->currentAngle = Robot::loaderAngle->GetAngle();//angle is returned in degrees
 	int angleError = currentAngle - targetAngle;
 	float angleAdjustment = angleError * gain;
 
-	double power = angleAdjustment;
+	power = angleAdjustment;
 
-	if (power < -1) {
-		power = -1;
+	if (power > 0.3) {
+		power = 0.3;
+	} else if (power < -0.3){
+		power = -0.3;
 	}
 
 	Robot::loaderAngle->Move(power);
+
+	SmartDashboard::PutNumber("LOADER flatloader encoder current angle:", Robot::loaderAngle->GetAngle());
+	SmartDashboard::PutNumber("LOADER flatloader motor current power:", power);
+	SmartDashboard::PutNumber("LOADER flatloader encoder current angleAdjustment:", angleAdjustment);
+	SmartDashboard::PutNumber("LOADER flatloader encoder current angleError:", angleError);
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool LiftLoader::IsFinished()
 {
-	return (currentAngle <= 85);
+	SmartDashboard::PutNumber("LOADER flatloader encoder previousAngle", previousAngle);
+	return ((previousAngle <= overshootNumber + targetAngle) && (previousAngle >= targetAngle - overshootNumber) );
+
 }
 
 // Called once after isFinished returns true

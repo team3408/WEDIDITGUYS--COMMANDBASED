@@ -18,8 +18,12 @@ public:
 	bool IsFinished();
 	void End();
 	void Interrupted();
-
 	float currentAngle;
+	float power;
+	const double gain = 0.01;
+	const float targetAngle = 135;
+	const float overshootNumber = 10;
+	float previousAngle;
 };
 
 #endif
