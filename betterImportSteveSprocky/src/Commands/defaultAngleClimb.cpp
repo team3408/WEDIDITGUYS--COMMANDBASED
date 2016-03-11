@@ -10,7 +10,7 @@
 
 
 #include "DefaultAngleClimb.h"
-#include "OI.h"
+#include "../OI.h"
 
 DefaultAngleClimb::DefaultAngleClimb() {
 	// Use requires() here to declare subsystem dependencies
