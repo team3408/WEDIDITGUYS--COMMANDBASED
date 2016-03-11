@@ -43,9 +43,9 @@ void DriveSetDistance::Execute()
 
 	power = (EncErrorLeft * gain); // motors were going in the wrong direction
 
-	if (power > 1) {
+	if (power > 0.6) {
 
-		power = 1;
+		power = 0.6;
 
 	} else if (power < -1){
 

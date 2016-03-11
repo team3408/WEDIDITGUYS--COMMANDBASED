@@ -61,6 +61,10 @@ void Robot::RobotInit() {
 	usbCamera -> SetQuality(50);
 	usbCamera -> StartAutomaticCapture("cam1");
 
+	usbCamera = CameraServer::GetInstance();
+	usbCamera -> SetQuality(50);
+	usbCamera -> StartAutomaticCapture("cam0");
+
 	//usbCamera -> OpenCamera();
 	//usbCamera -> StartCapture();
 	//usbCamera -> GetImage(otherFrame);
