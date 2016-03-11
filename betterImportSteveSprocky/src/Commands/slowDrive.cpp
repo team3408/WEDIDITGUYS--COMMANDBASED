@@ -27,8 +27,8 @@ void slowDrive::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void slowDrive::Execute() {
-	float leftDrive = Robot::oi->getdriveStick()->GetRawAxis(1);
-	float rightDrive = Robot::oi->getdriveStick()->GetRawAxis(3);
+	double leftDrive = Robot::oi->GetLeftDriveThumbStick();
+	double rightDrive = Robot::oi->GetRightDriveThumbStick();
 	leftDrive = leftDrive/3;
 	rightDrive = rightDrive/3;
 	Robot::drive->TwoAxis(leftDrive, rightDrive);

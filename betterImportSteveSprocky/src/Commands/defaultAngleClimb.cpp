@@ -10,6 +10,7 @@
 
 
 #include "DefaultAngleClimb.h"
+#include "OI.h"
 
 DefaultAngleClimb::DefaultAngleClimb() {
 	// Use requires() here to declare subsystem dependencies
@@ -27,7 +28,7 @@ void DefaultAngleClimb::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DefaultAngleClimb::Execute() {
-	float robotAngle = Robot::oi->getbuttonStick()->GetRawAxis(3);
+	double robotAngle = Robot::oi->GetClimberThumbStick();
 	Robot::climberAngle->Move(robotAngle*.8);
 }
 
