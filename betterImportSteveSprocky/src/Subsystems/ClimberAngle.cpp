@@ -53,7 +53,6 @@ float ClimberAngle::GetAngle(){
 	return angle;
 }
 
-void CimberAngle::DisplayEverything(){
-
-	SmartDashboard::PutNumber("climber angle:", GetAngle());
+void ClimberAngle::DisplayEverything(){
+	SmartDashboard::PutNumber("CLIMBERANGLE encoder display everything angle :", this->GetAngle());
 }

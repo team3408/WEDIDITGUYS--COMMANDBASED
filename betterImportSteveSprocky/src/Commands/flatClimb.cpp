@@ -42,9 +42,9 @@ void flatClimb::Execute() {
 	
 	Robot::climberAngle->Move(power);
 	
-	SmartDashboard::PutNumber("CLIMBER power:", power);
-	SmartDashboard::PutNumber("CLIMBER current angle:", currentAngle);
-	SmartDashboard::PutNumber("CLIMBER target Angle:", targetAngle);
+	SmartDashboard::PutNumber("CLIMBER FlatClimb motor power: ", power);
+	SmartDashboard::PutNumber("CLIMBER FaltClimb encoder current angle:", currentAngle);
+	SmartDashboard::PutNumber("CLIMBER FlatClimb encoder target angle:", targetAngle);
 
 
 

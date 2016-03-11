@@ -20,8 +20,8 @@ DriveSetDistance::DriveSetDistance(double Distance)
 void DriveSetDistance::Initialize()
 {
 	   float rotations = targetDistance / circumference;
-	   SmartDashboard::PutNumber("InitialEncoderCounts",Robot::drive->Encoders());
-	   targetEncoderCounts = encoderCountsPerRotation * rotations +  Robot::drive->Encoders();
+	   SmartDashboard::PutNumber("DRIVE DSD Encoder Initial",Robot::drive->Encoders()); //DSD is drive set distance
+	   targetEncoderCounts = encoderCountsPerRotation * rotations + abs (Robot::drive->Encoders());
 
 	   power = 0.0;
 }
@@ -35,10 +35,10 @@ void DriveSetDistance::Execute()
     currentEncCountLeft = abs(Robot::drive ->Encoders());
 
     EncErrorLeft = targetEncoderCounts - currentEncCountLeft;
-	SmartDashboard::PutNumber("target encoder DRIVE counts:" ,targetEncoderCounts);
-	SmartDashboard::PutNumber("current DRIVE encoder counts:" ,currentEncCountLeft);
-	SmartDashboard::PutNumber("current DRIVE power:" , power);
-	SmartDashboard::PutNumber("current DRIVE encoder error:", EncErrorLeft);
+	SmartDashboard::PutNumber("DRIVE DSD encoder target: " ,targetEncoderCounts);
+	SmartDashboard::PutNumber("DRIVE DSD encoder current :" ,currentEncCountLeft);
+	SmartDashboard::PutNumber("DRIVE DSD motor power :" , power);
+	SmartDashboard::PutNumber("DRIVE DSD encoder error :", EncErrorLeft);
 
 
 	power = (EncErrorLeft * gain); // motors were going in the wrong direction

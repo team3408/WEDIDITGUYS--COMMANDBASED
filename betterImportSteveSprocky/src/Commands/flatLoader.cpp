@@ -26,8 +26,8 @@ flatLoader::flatLoader() {
 // Called just before this Command runs the first time
 void flatLoader::Initialize() {
 
-	SmartDashboard::PutNumber("LOADER initial flat loader angle:", Robot::loaderAngle->GetAngle());
-	SmartDashboard::PutNumber("LOADER initial power:", power);
+	SmartDashboard::PutNumber("LOADER flat loader encoder angle :", Robot::loaderAngle->GetAngle());
+	SmartDashboard::PutNumber("LOADER flat loader motor initial power:", power);
 	currentAngle = Robot::loaderAngle->GetAngle();
 	previousAngle = Robot::loaderAngle->GetAngle();
 	//power = 0;
@@ -53,17 +53,17 @@ void flatLoader::Execute() {
 
 	Robot::loaderAngle->Move(power);
 
-	SmartDashboard::PutNumber("LOADER current flat loader angle:", Robot::loaderAngle->GetAngle());
-	SmartDashboard::PutNumber("LOADER current power:", power);
-	SmartDashboard::PutNumber("LOADER current angleAdjustment:", angleAdjustment);
-	SmartDashboard::PutNumber("LOADER current angleError:", angleError);
+	SmartDashboard::PutNumber("LOADER flatloader encoder current angle:", Robot::loaderAngle->GetAngle());
+	SmartDashboard::PutNumber("LOADER flatloader motor current power:", power);
+	SmartDashboard::PutNumber("LOADER flatloader encoder current angleAdjustment:", angleAdjustment);
+	SmartDashboard::PutNumber("LOADER flatloader encoder current angleError:", angleError);
 
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool flatLoader::IsFinished() {
-	SmartDashboard::PutNumber("LOADER previousAngle", previousAngle);
+	SmartDashboard::PutNumber("LOADER flatloader encoder previousAngle", previousAngle);
 	return ((previousAngle <= overshootNumber + targetAngle) && (previousAngle >= targetAngle - overshootNumber) );
 
 }

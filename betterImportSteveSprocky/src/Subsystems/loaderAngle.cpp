@@ -63,10 +63,10 @@ void LoaderAngle::Stop() {
 }
 
 void LoaderAngle::DisplayValue(){
-	SmartDashboard::PutNumber("Voltage of loader angle talon1",angle->GetOutputVoltage());
-	SmartDashboard::PutNumber("Current pf loader angle talon1",angle->GetOutputCurrent());
-	SmartDashboard::PutNumber("Voltage of loader angle talon2",angle2->GetOutputVoltage());
-	SmartDashboard::PutNumber("Current pf loader angle talon2",angle2->GetOutputCurrent());
+	SmartDashboard::PutNumber("LOADER loader angle1 voltage",angle->GetOutputVoltage());
+	SmartDashboard::PutNumber("LOADER loader angle1 current output",angle->GetOutputCurrent());
+	SmartDashboard::PutNumber("LOADER loader angle2 voltage",angle2->GetOutputVoltage());
+	SmartDashboard::PutNumber("LOADER loader angle2 current output",angle2->GetOutputCurrent());
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

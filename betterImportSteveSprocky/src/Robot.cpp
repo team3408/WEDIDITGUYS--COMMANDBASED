@@ -108,8 +108,9 @@ void Robot::DisabledPeriodic() {
 
 void Robot::AutonomousInit() {
 
+	autonomousCommand = (Command *) chooser->GetSelected();
+
 	if (autonomousCommand != NULL){
-		autonomousCommand = (Command *) chooser->GetSelected();
 		autonomousCommand->Start();
 	}
 
@@ -146,7 +147,7 @@ void Robot::TeleopPeriodic() {
 	Scheduler::GetInstance()->Run();
 
 	drive->DisplayEverything();
-
+	climberAngle->DisplayEverything();
 	loaderAngle->DisplayValue();
 	//Start Camera Code
 	//camera->GetImage(frame);

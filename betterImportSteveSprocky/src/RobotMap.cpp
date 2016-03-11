@@ -91,7 +91,7 @@ void RobotMap::init() {
 	climberAngleCANTalon1 = new CANTalon(25);
 	
 	
-	climberAngleAnalogPotentiometer1 = new AnalogPotentiometer(2, 27.0, 0.0);
+	climberAngleAnalogPotentiometer1 = new AnalogPotentiometer(2, 360.0, 0.0);
 	lw->AddSensor("ClimberAngle", "Analog Potentiometer 1", climberAngleAnalogPotentiometer1);
 	
 
