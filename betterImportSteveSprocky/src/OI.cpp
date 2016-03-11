@@ -118,7 +118,7 @@ double OI::GetLeftDriveThumbStick(){
         //1 is y left
 }
 double OI::GetRightDriveThumbStick(){
-        return driveStick->GetRawAxis(3);
+        return driveStick->GetRawAxis(5);
 }
 double OI::GetLoaderThumbStick(){
         //NUMBER HAS BEEN DOUBLE CHECKED

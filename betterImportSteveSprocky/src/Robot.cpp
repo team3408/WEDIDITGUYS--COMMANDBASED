@@ -86,7 +86,7 @@ void Robot::RobotInit() {
 	chooser->AddDefault("Default Drive Forward", new AutoDriveForward());//Make sure to Add the Include add the top
 	chooser->AddObject("Drive Under port", new DriveUnderPort());
 	chooser->AddObject("Drive Under lo-bar", new DriveUnderLowbar());
-
+	chooser->AddObject("NO AUTO",NULL);
 	SmartDashboard::PutData("auto chooser: ", chooser);
 
 
