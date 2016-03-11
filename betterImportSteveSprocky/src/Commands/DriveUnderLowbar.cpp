@@ -7,7 +7,7 @@
 
 DriveUnderLowbar::DriveUnderLowbar()
 {
-	const int distThroughObstacle = 100;//inches this needs to be changed
+	const int distThroughObstacle = 60;//inches this needs to be changed
 	AddSequential(new AutoDriveWithMechsDown());
 	AddSequential(new DriveSetDistance(distThroughObstacle));
 
