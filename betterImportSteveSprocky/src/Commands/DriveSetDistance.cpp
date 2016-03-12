@@ -47,9 +47,9 @@ void DriveSetDistance::Execute()
 
 		power = 0.6;
 
-	} else if (power < -1){
+	} else if (power < -0.6){
 
-		power = -1;
+		power = -0.6;
 
 	}
 
