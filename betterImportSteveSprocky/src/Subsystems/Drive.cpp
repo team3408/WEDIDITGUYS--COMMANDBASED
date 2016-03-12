@@ -48,8 +48,8 @@ void Drive::InitDefaultCommand() {
 }
 
 void Drive::TwoAxis(float left, float right) {
-	cANTalon1->Set(-left);
-	cANTalon2->Set(-left);
+	cANTalon1->Set(-left*.8);
+	cANTalon2->Set(-left*.8);
 	cANTalon3->Set(right);
 	cANTalon4->Set(right);
 
