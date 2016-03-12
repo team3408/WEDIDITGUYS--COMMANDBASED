@@ -43,14 +43,16 @@ OI::OI() {
 	buttonStick = new Joystick(5);
 
 
-	spinnerIn = new JoystickButton(buttonStick, 2);
-	spinnerIn->WhileHeld(new spinIn());
-	spinnerOut = new JoystickButton(buttonStick, 4);
-	spinnerOut->WhileHeld(new spinOut());
-	spinnerFastIn = new JoystickButton(buttonStick, 1);
+//	spinnerIn = new JoystickButton(buttonStick, 2);
+//	spinnerIn->WhileHeld(new spinIn());
+//	spinnerOut = new JoystickButton(buttonStick, 4);
+//	spinnerOut->WhileHeld(new spinOut());
+	spinnerFastIn = new JoystickButton(buttonStick, 2);
 	spinnerFastIn->WhileHeld(new FastSpinIn());
-	spinnerFastOut = new JoystickButton(buttonStick, 3);
+	spinnerFastOut = new JoystickButton(buttonStick, 4);
 	spinnerFastOut->WhileHeld(new FastSpinOut());
+
+
 	extendPiston = new JoystickButton(buttonStick, 6);
 	extendPiston->WhileHeld(new extend());
 	retractPiston = new JoystickButton(buttonStick, 5);
@@ -111,17 +113,21 @@ Joystick* OI::getbuttonStick() {
 	return buttonStick;
 }
 
-Joystick* OI::getdriveStick() {
+Joystick* OI::getdriveStick () {
 	return driveStick;
 }
 
 //This way we can change the values easier
 double OI::GetLeftDriveThumbStick(){
-        return driveStick->GetRawAxis(1);
+		double value = driveStick->GetRawAxis(1);
+		SmartDashboard::PutNumber("Drive OI LeftThumbStick",value);
+        return value;
         //1 is y left
 }
 double OI::GetRightDriveThumbStick(){
-        return driveStick->GetRawAxis(5);
+	double	value = driveStick->GetRawAxis(5);
+	SmartDashboard::PutNumber("Drive OI RightThumbStick",value);
+	return value;
 }
 double OI::GetLoaderThumbStick(){
         //NUMBER HAS BEEN DOUBLE CHECKED
