@@ -13,7 +13,7 @@
 #include "Commands/DriveSetDistance.h"
 #include "Commands/DriveUnderPort.h"
 #include "Commands/DriveUnderLowbar.h"
-
+#include "Commands/AutoWithTime.h"
 
 LoaderSpin* Robot::loaderSpin = 0;
 Drive* Robot::drive = 0;
@@ -87,6 +87,7 @@ void Robot::RobotInit() {
 	chooser->AddDefault("Default Drive Forward", new AutoDriveForward());//Make sure to Add the Include add the top
 	chooser->AddObject("Drive Under port", new DriveUnderPort());
 	chooser->AddObject("Drive Under lo-bar", new DriveUnderLowbar());
+	chooser->AddObject("Auto With Time", new AutoWithTime());
 
 	SmartDashboard::PutData("auto chooser: ", chooser);
 
