@@ -49,3 +49,12 @@ void LoaderSpin::Stop() {
 	spin->Set(0);
 
 }
+void LoaderSpin::FastOut() {
+	spin->Set(-1);
+
+}
+
+void LoaderSpin::FastIn() {
+	spin->Set(1);
+
+}

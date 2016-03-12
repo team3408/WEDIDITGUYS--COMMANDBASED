@@ -21,6 +21,8 @@ private:
 	JoystickButton* allFlat;
 	JoystickButton* spinnerIn;
 	JoystickButton* spinnerOut;
+	JoystickButton* spinnerFastIn;
+	JoystickButton* spinnerFastOut;
 	JoystickButton* extendPiston;
 	JoystickButton* retractPiston;
 	JoystickButton* climbUp;

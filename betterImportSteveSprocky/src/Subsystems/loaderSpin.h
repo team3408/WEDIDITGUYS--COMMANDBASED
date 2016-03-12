@@ -33,6 +33,9 @@ public:
 
 	void In();
 	void Out();
+
+	void FastIn();
+	void FastOut();
 	void Stop();
 
 };
